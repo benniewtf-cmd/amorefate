@@ -1,0 +1,117 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>wtfbennie</title> <link rel="stylesheet" href="styles.css"> <style> /* Comment section */ .comments-container { position: relative; z-index: 10; max-width: 700px; margin: 100px auto 40px; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); font-family: Arial, sans-serif; } .comments-container h2 { margin-top: 0; } .comment-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; } .comment-form input, .comment-form textarea { width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 15px; font-family: Arial, sans-serif; } .comment-form textarea { min-height: 100px; resize: vertical; } .comment-form button { width: auto; height: auto; background: #222; color: white; border: none; padding: 12px 18px; border-radius: 8px; cursor: pointer; font-size: 15px; } .comment-form button:hover { background: #444; } .comment { border-top: 1px solid #ddd; padding: 18px 0; } .comment-name { font-weight: bold; margin-bottom: 5px; } .comment-date { color: #888; font-size: 12px; margin-bottom: 8px; } .comment-text { margin-bottom: 10px; white-space: pre-wrap; overflow-wrap: anywhere; } .delete-button { width: auto; height: auto; background: #d33; color: white; border: none; padding: 7px 12px; border-radius: 6px; font-size: 13px; cursor: pointer; } .delete-button:hover { background: #b22; } .empty { color: #777; text-align: center; padding: 20px; } /* Prevent the image-button class from conflicting with the social media buttons in your external CSS */ .destination-button { display: block; width: 100px; margin: 30px auto; } .destination-button img { width: 100px; height: 100px; object-fit: contain; } </style> </head> <body class="body"> <!-- Bottom-left text --> <div class="container"> <p>site created by wtfbennie</p> </div> <!-- Top-left title --> <h1 class="topleft">"Amore Fate"</h1> <!-- Middle-left text --> <p class="leftmiddle">hi guys</p> <!-- Bottom-right link -->
+
+<a
+class="bottomright"
+href="https://youtu.be/MRBOJoiA0pE?si=4Bc5RDu5w-fToPEj"
+target="_blank"
+rel="noopener noreferrer"
+
+do not click this
+
+</a> <!-- Chief Keef GIF -->
+
+<img
+src="https://i.pinimg.com/originals/de/48/0f/de480fe95622aa3a24e5381512fba73f.gif"
+class="left"
+alt="Chief Keef flexing money"
+
+<!-- About link -->
+
+<a class="topright" href="about.html">2</a>
+
+<!-- Genius -->
+
+<a
+href="https://genius.com/artists/Wtfbennie"
+target="_blank"
+rel="noopener noreferrer"
+
+<img
+  src="https://genius.com/favicon.ico"
+  class="image-button"
+  alt="Genius"
+>
+
+</a> <!-- YouTube -->
+
+<a
+href="https://www.youtube.com/@wtfbennie"
+target="_blank"
+rel="noopener noreferrer"
+
+<img
+  src="https://upload.wikimedia.org/wikipedia/commons/f/fd/YouTube_full-color_icon_%282024%29.svg"
+  class="second-image"
+  alt="YouTube"
+>
+
+</a> <!-- SoundCloud -->
+
+<a
+href="https://soundcloud.com/wtfbennie"
+target="_blank"
+rel="noopener noreferrer"
+
+<img
+  src="https://cdn-icons-png.flaticon.com/512/145/145809.png"
+  class="third-image"
+  alt="SoundCloud"
+>
+
+</a> <!-- Instagram -->
+
+<a
+href="https://www.instagram.com/wtfbennie/"
+target="_blank"
+rel="noopener noreferrer"
+
+<img
+  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/3840px-Instagram_logo_2016.svg.png"
+  class="fourth-image"
+  alt="Instagram"
+>
+
+</a> <!-- X -->
+
+<a
+href="https://x.com/prodwtfbennie"
+target="_blank"
+rel="noopener noreferrer"
+
+<img
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI8xG8AjD_bu098zIlF8xO5U8bcypqIshZb3jQjxNQHQ&s"
+  class="fifth-image"
+  alt="X"
+>
+
+</a> <!-- ==================== COMMENTS ==================== --> <div class="comments-container">
+<h2>Comments</h2>
+
+<form class="comment-form" id="commentForm">
+
+  <input
+    type="text"
+    id="name"
+    placeholder="Your name"
+    maxlength="50"
+    required
+  >
+
+  <textarea
+    id="comment"
+    placeholder="Write a comment..."
+    maxlength="600"
+    required
+  ></textarea>
+
+  <button type="submit">post</button>
+
+</form>
+
+<div id="comments">
+  <div class="empty">
+    No comments yet. Be the first!
+  </div>
+</div>
+
+</div> <!-- Destination button --> <a href="destination.html" class="destination-button"> <img src="your-button-image.jpg" alt="Submit" > </a> <!-- Background music --> <audio autoplay loop> <source src="GOYARD_BACKPACK_KLICKAUD.mp3" type="audio/mpeg" > Your browser does not support audio. </audio> <script> const form = document.getElementById("commentForm"); const commentsContainer = document.getElementById("comments"); let comments = JSON.parse( localStorage.getItem("comments") ) || []; function saveComments() { localStorage.setItem( "comments", JSON.stringify(comments) ); } function displayComments() { commentsContainer.innerHTML = ""; if (comments.length === 0) { commentsContainer.innerHTML = '<div class="empty">No comments yet. Be the first!</div>'; return; } comments.forEach((comment, index) => { const commentElement = document.createElement("div"); commentElement.className = "comment"; const name = document.createElement("div"); name.className = "comment-name"; name.textContent = comment.name; const date = document.createElement("div"); date.className = "comment-date"; date.textContent = comment.date; const text = document.createElement("div"); text.className = "comment-text"; text.textContent = comment.text; const deleteButton = document.createElement("button"); deleteButton.className = "delete-button"; deleteButton.textContent = "Delete"; deleteButton.onclick = () => { comments.splice(index, 1); saveComments(); displayComments(); }; commentElement.appendChild(name); commentElement.appendChild(date); commentElement.appendChild(text); commentElement.appendChild(deleteButton); commentsContainer.appendChild( commentElement ); }); } form.addEventListener( "submit", function(event) { event.preventDefault(); const name = document.getElementById("name") .value .trim(); const text = document.getElementById("comment") .value .trim(); if (!name || !text) { return; } comments.unshift({ name: name, text: text, date: new Date().toLocaleString() }); saveComments(); displayComments(); form.reset(); } ); displayComments(); </script> </body> </html>
